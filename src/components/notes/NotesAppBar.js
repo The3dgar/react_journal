@@ -21,9 +21,11 @@ export const NotesAppBar = () => {
     }
   };
 
+  const today = () => new Date().toDateString()
+
   return (
     <div className="notes_appbar">
-      <span>28 de agosto 2020</span>
+      <span>{today()}</span>
       <input
         id="fileSelector"
         type="file"
