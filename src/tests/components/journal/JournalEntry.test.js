@@ -24,6 +24,7 @@ const nota = {
 const wrapper = mount(
   <Provider store={store}>
     <JournalEntry {...nota}/>
+    
   </Provider>
 );
 
