@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test in <JournalEntr/> should snap correctly 1`] = `
+<div
+  className="journal__entry pointer animate__animated animate__fadeIn anime__faster"
+  onClick={[Function]}
+>
+  <div
+    className="journal__entry-picture"
+    style={
+      Object {
+        "backgroundImage": "url(https://algunhost.com/picture.jpg)",
+        "backgroundSize": "cover",
+      }
+    }
+  />
+  <div
+    className="journal__entry-body"
+  >
+    <p
+      className="journal__entry-title"
+    >
+       
+      Titulo
+    </p>
+    <p
+      className="journal__entry-content"
+    >
+      mundo
+    </p>
+  </div>
+  <div
+    className="journal__entry-date-box"
+  >
+    <span>
+      Wednesday
+    </span>
+    <h4>
+      31
+    </h4>
+  </div>
+</div>
+`;

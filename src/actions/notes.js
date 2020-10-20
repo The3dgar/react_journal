@@ -84,20 +84,23 @@ export const refreshNote = (id, note) => ({
 
 export const startUpLoading = (file) => {
   return async (dispatch, getState) => {
-    const { active: activeNote } = getState().notes;
-    Swal.fire({
-      title: "Uploading file...",
-      text: "Please wait",
-      allowOutSideClick: false,
-      onBeforeOpen: () => Swal.showLoading(),
-    });
-    const url = await fileUpload(file).catch((e) =>
-      console.log("ERROR IN FETCH CLOUDINARY: ", e.toString())
-    );
-    activeNote.url = url;
-    dispatch(startSaveNote(activeNote));
-
-    Swal.close();
+    try {
+      const { active: activeNote } = getState().notes;
+      Swal.fire({
+        title: "Uploading file...",
+        text: "Please wait",
+        allowOutSideClick: false,
+        onBeforeOpen: () => Swal.showLoading(),
+      });
+      const url = await fileUpload(file)
+      activeNote.url = url;
+      dispatch(startSaveNote(activeNote));
+  
+      Swal.close();
+    } catch (error) {
+      console.log("error in startUpLoading, error: ", error)
+    }
+   
   };
 };
 
